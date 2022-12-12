@@ -1,0 +1,32 @@
+.aside-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 76px;
+  padding: 115px 0 20px 0;
+  background: var(--color-grey);
+  color: var(--color-white);
+}
+
+.navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  & > li {
+    cursor: pointer;
+  }
+}
+
+.control-list {
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  justify-content: space-between;
+  & > li {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

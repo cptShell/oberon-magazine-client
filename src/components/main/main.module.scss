@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url(../../assets/fonts/MyriadPro/MyriadPro-Light.otf) format('truetype');
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -7,11 +12,33 @@
   background-image: url('../../assets/img/backgound/main-bg.avif');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .title {
   line-height: 195px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 54px;
+  color: var(--color-grey);
   text-transform: uppercase;
+}
+
+.main-button {
+  font-family: 'Myriad Pro', Myriad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  background: var(--main-purple);
+  color: var(--color-white);
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  filter: drop-shadow(0px 4px 4px rgba(50, 50, 71, 0.08))
+    drop-shadow(0px 4px 8px rgba(50, 50, 71, 0.06));
+  &:hover {
+    cursor: pointer;
+  }
 }

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Logo } from './logo/logo';
 import gamingPC from '~/assets/img/aside/gaming-pc.svg';
 import components from '~/assets/img/aside/components.svg';
 import community from '~/assets/img/aside/community.svg';
@@ -13,6 +14,7 @@ type Props = {};
 export const AsideBar: FC<Props> = () => {
   return (
     <div className={styles['aside-bar']}>
+      <Logo />
       <ul className={styles['navigation-list']}>
         <li>
           <img src={gamingPC} />

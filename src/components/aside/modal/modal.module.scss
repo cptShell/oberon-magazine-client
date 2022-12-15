@@ -1,0 +1,98 @@
+@mixin text($color, $size) {
+  font-family: Montserrat;
+  font-weight: 700;
+  color: $color;
+  font-size: $size;
+}
+
+.modal-shadow {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity ease 0.3s;
+  &.active {
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  z-index: 1000;
+  top: 70px;
+  left: 75px;
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  color: var(--color-white);
+  background: var(--color-grey);
+}
+
+.modal-menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 480px;
+  gap: 12px;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  & > li {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    & > h2 {
+      @include text(var(--color-white), 20px);
+      text-transform: uppercase;
+    }
+    & > img {
+      height: 20px;
+    }
+  }
+}
+
+.point-grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3 1fr);
+  & > .point-item {
+    & > h4 {
+      @include text(var(--color-white), 15px);
+      line-height: 25px;
+    }
+    & > span {
+      @include text(rgba(var(--color-white)), 10px);
+      line-height: 20px;
+      opacity: 0.7;
+    }
+  }
+}
+
+.advertise-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  border-radius: 20px;
+  background: white;
+  h3 {
+    @include text(black, 20px);
+    line-height: 25px;
+  }
+  span {
+    @include text(rgba(0, 0, 0, 0.5), 12px);
+    line-height: 25px;
+  }
+}

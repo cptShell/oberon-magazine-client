@@ -6,8 +6,8 @@ import styles from './App.module.scss';
 export const App: FC<{}> = () => {
   return (
     <div className={styles['App']}>
-      <AsideBar></AsideBar>
-      <Main></Main>
+      <AsideBar />
+      <Main />
     </div>
   );
 };

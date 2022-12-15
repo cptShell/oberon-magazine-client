@@ -15,7 +15,10 @@
   flex-direction: column;
   gap: 20px;
   & > li {
-    cursor: pointer;
+    position: relative;
+    & > img {
+      cursor: pointer;
+    }
   }
 }
 
@@ -25,7 +28,6 @@
   height: 110px;
   justify-content: space-between;
   & > li {
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -5,6 +5,11 @@
   font-size: $size;
 }
 
+@mixin H2 {
+  @include text(var(--color-white), 20px);
+  text-transform: uppercase;
+}
+
 .modal-shadow {
   position: fixed;
   z-index: 100;
@@ -53,8 +58,7 @@
     align-items: center;
     cursor: pointer;
     & > h2 {
-      @include text(var(--color-white), 20px);
-      text-transform: uppercase;
+      @include H2();
     }
     & > img {
       height: 20px;
@@ -64,9 +68,9 @@
 
 .point-grid {
   display: grid;
-  gap: 5px;
+  gap: 5px 30px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3 1fr);
+
   & > .point-item {
     & > h4 {
       @include text(var(--color-white), 15px);
@@ -94,5 +98,18 @@
   span {
     @include text(rgba(0, 0, 0, 0.5), 12px);
     line-height: 25px;
+  }
+}
+
+.components-container {
+  display: flex;
+  gap: 70px;
+  & > li {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    & > h2 {
+      @include H2;
+    }
   }
 }

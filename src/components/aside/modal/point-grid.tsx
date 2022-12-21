@@ -1,25 +1,21 @@
 import { FC } from 'react';
+import { PointItem } from '~/common/types/types';
 import styles from './modal.module.scss';
 
-type PointItem = {
-  title: string;
-  description: string;
+type Props = {
+  pointItems: Array<PointItem>;
 };
 
-export const PointGrid: FC<{}> = () => {
-  const pointItems: Array<PointItem> = [
-    { title: 'Standard PC', description: 'Prebuilt Gaming PC' },
-    { title: 'Premium + PC', description: 'Prebuilt Gaming PC' },
-    { title: 'High PC', description: 'Prebuilt Gaming PC' },
-    { title: 'Core series', description: 'Prebuilt Gaming PC “all in one”' },
-    { title: 'Premium PC', description: 'Prebuilt Gaming PC' },
-    { title: 'BLD', description: 'Build your first gaming PC' },
-  ];
+export const PointGrid: FC<Props> = ({ pointItems }) => {
+  const columns = Math.ceil(pointItems.length / 4);
 
   return (
-    <ul className={styles['point-grid']}>
-      {pointItems.map(({ title, description }) => (
-        <li key={title} className={styles['point-item']}>
+    <ul
+      style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+      className={styles['point-grid']}
+    >
+      {pointItems.map(({ title, description }, index) => (
+        <li key={index} className={styles['point-item']}>
           <h4>{title}</h4>
           <span>{description}</span>
         </li>

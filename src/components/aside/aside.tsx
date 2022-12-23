@@ -15,10 +15,12 @@ import { Components } from './modal/components';
 type Props = {};
 
 export const AsideBar: FC<Props> = () => {
-  const [currentModal, setCurrentModal] = useState(<GamingPC />);
   const [isOpen, setIsOpen] = useState(false);
-
   const handleClose = () => setIsOpen(false);
+
+  const [currentModal, setCurrentModal] = useState(
+    <GamingPC onClose={handleClose} />
+  );
   const handleOpen = (modal: JSX.Element) => {
     setCurrentModal(modal);
     setIsOpen(true);
@@ -30,10 +32,16 @@ export const AsideBar: FC<Props> = () => {
         <Logo />
         <ul className={styles['navigation-list']}>
           <li>
-            <img src={gamingPC} onClick={() => handleOpen(<GamingPC />)} />
+            <img
+              src={gamingPC}
+              onClick={() => handleOpen(<GamingPC onClose={handleClose} />)}
+            />
           </li>
           <li>
-            <img src={components} onClick={() => handleOpen(<Components />)} />
+            <img
+              src={components}
+              onClick={() => handleOpen(<Components onClose={handleClose} />)}
+            />
           </li>
           <li>
             <img src={community} />

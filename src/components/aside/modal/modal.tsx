@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import clsx from 'clsx';
 import { PointGrid } from './point-grid';
 import specialOffersSRC from '~/assets/img/common/special-offers.png';
@@ -12,6 +12,10 @@ type Props = {
 };
 
 export const Modal: FC<Props> = ({ isOpen, onClose, children }) => {
+  useEffect(() => {
+    onClose();
+  }, []);
+
   const modalShadowClass = clsx(styles['modal-shadow'], {
     [styles['active']]: isOpen,
   });

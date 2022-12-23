@@ -1,11 +1,23 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PointGrid } from './point-grid';
+import { gamingPC } from '~/common/constants/constants';
 import specialOffersSRC from '~/assets/img/common/special-offers.png';
 import arrowRightSRC from '~/assets/img/icon/arrow-right.svg';
 import styles from './modal.module.scss';
-import { gamingPC } from '~/common/constants/constants';
 
-export const GamingPC: FC<{}> = () => {
+type Props = {
+  onClose: () => void;
+};
+
+export const GamingPC: FC<Props> = ({ onClose }) => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (route: string) => {
+    navigate(route);
+    onClose();
+  };
+
   const blockBubbling = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
@@ -14,7 +26,7 @@ export const GamingPC: FC<{}> = () => {
     <div onClick={blockBubbling} className={styles['modal-wrapper']}>
       <div className={styles['modal-menu']}>
         <ul className={styles['link-list']}>
-          <li>
+          <li onClick={() => handleNavigate('/build-a-custom-pc')}>
             <h2>Build a custom PC</h2>
             <img src={arrowRightSRC} alt="arrow right" />
           </li>

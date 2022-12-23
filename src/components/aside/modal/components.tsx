@@ -3,7 +3,11 @@ import { cases, components, cooling } from '~/common/constants/constants';
 import styles from './modal.module.scss';
 import { PointGrid } from './point-grid';
 
-export const Components: FC<{}> = () => {
+type Props = {
+  onClose: () => void;
+};
+
+export const Components: FC<Props> = ({ onClose }) => {
   const blockBubbling = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };

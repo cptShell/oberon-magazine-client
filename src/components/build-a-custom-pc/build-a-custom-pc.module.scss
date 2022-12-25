@@ -1,8 +1,44 @@
-.heading-wrapper {
+.wrapper {
+  position: relative;
   display: flex;
-  & > .heading-container {
-  }
-
+  flex-direction: column;
+  font-family: 'Roboto';
+  color: var(--color-grey);
   & > img {
+    width: 100%;
+  }
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  top: 250px;
+  left: 15px;
+  & > h2 {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 72px;
+    margin-bottom: 20px;
+  }
+  & > span {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  & > button {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 215px;
+    height: 44px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background: var(--main-purple);
   }
 }

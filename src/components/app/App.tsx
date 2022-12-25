@@ -12,7 +12,7 @@ export const App: FC<{}> = () => {
       <AsideBar />
       <Routes>
         <Route index path="/" element={<Main />} />
-        <Route path="build-custom-pc" element={<BuildACustomPC />} />
+        <Route path="/build-a-custom-pc" element={<BuildACustomPC />} />
       </Routes>
       <Support />
     </div>

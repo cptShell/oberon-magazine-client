@@ -1,5 +1,5 @@
-import { FC, useRef, useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { FC } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { AsideBar } from '~/components/aside/aside';
 import { Main } from '~/components/main/main';
 import { BuildACustomPC } from '../build-a-custom-pc/build-a-custom-pc';

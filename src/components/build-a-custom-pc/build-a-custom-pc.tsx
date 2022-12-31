@@ -6,9 +6,12 @@ import {
   Heading,
   ConfigurationCards,
   Partners,
+  Gallery,
+  Footer,
 } from './sections/sections';
-import styles from './build-a-custom-pc.module.scss';
 import { Parts } from './sections/parts';
+import { Reviews } from './sections/reviews';
+import styles from './build-a-custom-pc.module.scss';
 
 export const BuildACustomPC: FC<{}> = () => {
   return (
@@ -21,6 +24,9 @@ export const BuildACustomPC: FC<{}> = () => {
         <ConfigurationCards />
         <Partners />
         <Parts />
+        <Gallery />
+        <Reviews />
+        <Footer />
       </div>
     </div>
   );

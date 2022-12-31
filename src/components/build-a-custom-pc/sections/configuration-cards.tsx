@@ -9,12 +9,16 @@ export const ConfigurationCards: FC<{}> = () => {
   return (
     <div className={styles['configuration-cards']}>
       <div className={clsx(styles['configuration-card'], styles['first'])}>
-        <img src={one} />
+        <div>
+          <img src={one} />
+        </div>
         <h3>Chipset & Budget</h3>
         <span>Select your budget and your choice of AMD or Intel CPUs.</span>
       </div>
       <div className={clsx(styles['configuration-card'], styles['second'])}>
-        <img src={two} />
+        <div>
+          <img src={two} />
+        </div>
         <h3>Pick Parts & Peripherals</h3>
         <span>
           Pick your components and accessories based on your performance and
@@ -22,7 +26,9 @@ export const ConfigurationCards: FC<{}> = () => {
         </span>
       </div>
       <div className={clsx(styles['configuration-card'], styles['third'])}>
-        <img src={three} />
+        <div>
+          <img src={three} />
+        </div>
         <h3>We Build & Ship</h3>
         <span>
           Our experts build and ship your product directly to you with a two-day

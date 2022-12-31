@@ -5,7 +5,7 @@ import fpsBar from '~/assets/img/fps-bar.png';
 import transparentPricing from '~/assets/img/common/transparent-pricing.png';
 import warranity from '~/assets/img/icon/warranity.svg';
 import speedometer from '~/assets/img/icon/speedometer.svg';
-import wrench from '~/assets/img/icon/wrench.svg';
+import wrench from '~/assets/img/icon/wrench-dark.svg';
 import gamepad from '~/assets/img/icon/gamepad.svg';
 import headphones from '~/assets/img/icon/headphones.svg';
 import pipette from '~/assets/img/icon/pipette.svg';

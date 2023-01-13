@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styles from '../build.module.scss';
+import styles from './game-item.module.scss';
 
 type Props = {
   src: string;

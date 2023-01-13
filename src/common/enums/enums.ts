@@ -4,3 +4,5 @@ export * from './user-validation-rule';
 export * from './storage-key';
 export * from './app-route';
 export * from './task-api-path';
+export * from './chipset';
+export * from './resolution';

@@ -1,0 +1,24 @@
+.construct-toggle {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: 36px;
+  padding: 4px;
+  border-radius: 6px;
+  background: #111113;
+  cursor: pointer;
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84px;
+    height: 100%;
+    border-radius: 6px;
+    color: #818192;
+    transition: all ease 150ms;
+    &.active {
+      color: var(--color-white);
+      background: var(--color-grey);
+    }
+  }
+}

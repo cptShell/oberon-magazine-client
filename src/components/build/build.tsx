@@ -5,13 +5,11 @@ import { PCConfig } from '~/common/types/pc-config';
 import { ConstructSpace } from './components/construct-space/construct-space';
 
 export const Build: FC<{}> = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [config, setConfig] = useState<null | PCConfig>(null);
 
+  const saveConfig = (config: PCConfig) => setConfig(config);
   const setOpen = () => setIsOpen(true);
-  const saveConfig = (config: PCConfig) => {
-    setConfig(config);
-  };
   const setClose = (config: PCConfig) => {
     setIsOpen(false);
     saveConfig(config);

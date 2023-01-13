@@ -4,8 +4,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($color: var(--color-deep-dark), $alpha: 0.5);
+  background: rgba(0, 0, 0, 0.7);
   transition: opacity ease 0.3s;
+  pointer-events: none;
+  opacity: 0;
   &.active {
     pointer-events: all;
     opacity: 1;

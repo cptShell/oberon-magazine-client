@@ -1,6 +1,5 @@
 import { FC, useState } from 'react';
 import clsx from 'clsx';
-
 import { BudgetInput } from '../budget-input/budget-input';
 import { GameItem } from '../game-item/game-item';
 import { ConstructToggle } from '../toogle/construct-toggle';
@@ -32,12 +31,12 @@ export const ConstructModal: FC<Props> = ({ onClose, isOpen }) => {
     onClose(newConfig);
   };
 
+  const wrapperStyle = clsx(styles['construct-wrapper'], {
+    [styles['active']]: isOpen,
+  });
+
   return (
-    <div
-      className={clsx(styles['construct-wrapper'], {
-        [styles['active']]: isOpen,
-      })}
-    >
+    <div className={wrapperStyle}>
       <div className={styles['construct-modal']}>
         <button onClick={handleClose} className={styles['exit-modal']}>
           <img src={exit} />

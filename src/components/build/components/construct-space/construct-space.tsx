@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { PCConfig } from '~/common/types/types';
+import { WorkspaceAside } from './components/workspace-aside/workspace-aside';
 import { WorkspaceMain } from './components/workspace-main/workspace-main';
+import { WorkspaceTotal } from './components/workspace-total/workspace-total';
 import styles from './construct-space.module.scss';
 
 type Props = {
@@ -13,8 +15,12 @@ export const ConstructSpace: FC<Props> = ({ config, saveConfig }) => {
     <div className={styles['workspace-grid']}>
       <div className={styles['header']} />
       <WorkspaceMain config={config} saveConfig={saveConfig} />
-      <div className={styles['aside']}></div>
-      <div className={styles['footer']}></div>
+      <WorkspaceAside
+        config={config}
+        currentSection={'case'}
+        saveConfig={saveConfig}
+      />
+      <WorkspaceTotal config={config} />
       <div className={styles['next-button']}></div>
     </div>
   );

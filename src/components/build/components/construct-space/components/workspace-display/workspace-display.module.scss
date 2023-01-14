@@ -1,0 +1,98 @@
+.build-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.build-controls {
+  display: grid;
+  grid-template-areas:
+    'a a'
+    'b c'
+    'd e'
+    'f g'
+    'h i';
+  grid-template-columns: repeat(2, 232px);
+  grid-template-rows: minmax(62px, auto);
+  gap: 8px 16px;
+
+  & > .control-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px;
+    border-radius: 8px;
+    background: #222426;
+    transition: all ease 0.15s;
+    &.edit-mark {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+    }
+    &.active {
+      background: rgba(34, 36, 38, 0.2);
+      border: 1px solid #cdcdd5;
+    }
+    & > .img-container {
+      display: flex;
+      flex: 0 0 47px;
+      height: 47px;
+      background: var(--color-white);
+      border-radius: 8px;
+      overflow: hidden;
+      & > img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    & > .description-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      & > h3 {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      & > span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+    &.chipset > .img-container {
+      background: none;
+    }
+  }
+
+  & > .chipset {
+    grid-area: a;
+  }
+  & > .case {
+    grid-area: b;
+  }
+  & > .cooling {
+    grid-area: c;
+  }
+  & > .motherboard {
+    grid-area: d;
+  }
+  & > .gpu {
+    grid-area: e;
+  }
+  & > .cpu {
+    grid-area: f;
+  }
+  & > .power-supply {
+    grid-area: g;
+  }
+  & > .ram {
+    grid-area: h;
+  }
+  & > .storage {
+    grid-area: i;
+  }
+}

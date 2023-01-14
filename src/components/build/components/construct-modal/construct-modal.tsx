@@ -26,6 +26,7 @@ export const ConstructModal: FC<Props> = ({ onClose, isOpen }) => {
     const newConfig: PCConfig = {
       chipset: isItnel ? Chipset.INTEL : Chipset.AMD,
       case: PCCases[0],
+      currentColorIndex: 0,
     };
 
     onClose(newConfig);

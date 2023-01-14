@@ -5,22 +5,12 @@
     'm a'
     'f n';
   grid-template-columns: 1fr 500px;
-  grid-template-rows: 50px 1fr 60px;
+  grid-template-rows: 50px 1fr 76px;
   height: 100%;
 }
 
 .header {
   grid-area: h;
-  background: #111113;
-}
-
-.aside {
-  grid-area: a;
-  background: #111113;
-}
-
-.footer {
-  grid-area: f;
   background: #111113;
 }
 

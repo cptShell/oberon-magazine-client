@@ -1,7 +1,7 @@
+import { CaseColor } from './case-color';
+
 export type Case = {
   title: string;
   type: string;
-  color: string;
-  imgSrc: string;
-  colorHex: string;
+  colors: Array<CaseColor>;
 };

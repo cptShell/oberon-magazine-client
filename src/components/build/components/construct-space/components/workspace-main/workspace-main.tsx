@@ -1,11 +1,12 @@
 import { FC } from 'react';
-
+import { PCConfig } from '~/common/types/pc-config';
 import loadImg from '~/assets/img/icon/load1.svg';
 import saveImg from '~/assets/img/icon/save1.svg';
 import restartImg from '~/assets/img/icon/restart1.svg';
 import shareImg from '~/assets/img/icon/share1.svg';
+
 import styles from './workspace-main.module.scss';
-import { PCConfig } from '~/common/types/pc-config';
+import { WorkspaceDisplay } from '../workspace-display/workspace-display';
 
 type Props = {
   config: PCConfig | null;
@@ -44,69 +45,7 @@ export const WorkspaceMain: FC<Props> = ({ config, saveConfig }) => {
           </li>
         </ul>
       </div>
-      {config && (
-        <div className={styles['build-container']}>
-          <div className={styles['build-display']}>
-            <img src={config.case.imgSrc} alt={config.case.title} />
-          </div>
-          <div className={styles['build-controls']}>
-            <div className={styles['control-chipset']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-case']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-cooling']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-motherboard']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-gpu']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-cpu']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-power']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-ram']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-            <div className={styles['control-storage']}>
-              <div className={styles['img-container']}>
-                <img src="" alt="" />
-              </div>
-              <span>text</span>
-            </div>
-          </div>
-        </div>
-      )}
+      {config && <WorkspaceDisplay config={config} />}
     </div>
   );
 };

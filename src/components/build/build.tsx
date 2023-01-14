@@ -9,13 +9,10 @@ export const Build: FC<{}> = () => {
   const [config, setConfig] = useState<null | PCConfig>(null);
 
   const saveConfig = (config: PCConfig) => setConfig(config);
-  const setOpen = () => setIsOpen(true);
   const setClose = (config: PCConfig) => {
     setIsOpen(false);
     saveConfig(config);
   };
-
-  console.log(config);
 
   return (
     <div className={styles['build-wrapper']}>

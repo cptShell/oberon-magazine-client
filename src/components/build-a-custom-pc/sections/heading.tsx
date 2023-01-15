@@ -17,7 +17,9 @@ export const Heading: FC<{}> = () => {
         <span>Custom PCs designed by you, built by us.</span>
         <button onClick={handleNavigate}>Start Your PC Build</button>
       </div>
-      <img src={headingIMG} />
+      <div className={styles['heading-wrapper']}>
+        <img src={headingIMG} />
+      </div>
     </>
   );
 };

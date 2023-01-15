@@ -4,6 +4,7 @@ import { AsideBar } from '~/components/aside/aside';
 import { Main } from '~/components/main/main';
 import { BuildACustomPC } from '../build-a-custom-pc/build-a-custom-pc';
 import { Build } from '../build/build';
+import { Community } from '../community/community';
 import { Support } from '../support/support';
 import styles from './App.module.scss';
 
@@ -15,6 +16,7 @@ export const App: FC<{}> = () => {
         <Route index path="/" element={<Main />} />
         <Route path="/build-a-custom-pc" element={<BuildACustomPC />} />
         <Route path="/build" element={<Build />} />
+        <Route path="/community" element={<Community />} />
       </Routes>
       <Support />
     </div>

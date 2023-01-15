@@ -14,7 +14,22 @@
   background: #111113;
 }
 
-.next-button {
+.next-container {
   grid-area: n;
   background: #111113;
+  padding: 16px;
+}
+
+.next-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: #7315e5;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
 }

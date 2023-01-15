@@ -11,11 +11,14 @@ import styles from './aside.module.scss';
 import { Modal } from './modal/modal';
 import { GamingPC } from './modal/gaming-pc';
 import { Components } from './modal/components';
+import { useNavigate } from 'react-router-dom';
+const controlImgLIist = [user, question, search, basket];
 
 type Props = {};
 
 export const AsideBar: FC<Props> = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const handleClose = () => setIsOpen(false);
 
   const [currentModal, setCurrentModal] = useState(
@@ -44,22 +47,15 @@ export const AsideBar: FC<Props> = () => {
             />
           </li>
           <li>
-            <img src={community} />
+            <img src={community} onClick={() => navigate('/community')} />
           </li>
         </ul>
         <ul className={styles['control-list']}>
-          <li>
-            <img src={search} />
-          </li>
-          <li>
-            <img src={question} />
-          </li>
-          <li>
-            <img src={user} />
-          </li>
-          <li>
-            <img src={basket} />
-          </li>
+          {controlImgLIist.map((img) => (
+            <li>
+              <img src={img} />
+            </li>
+          ))}
         </ul>
       </div>
       <Modal isOpen={isOpen} onClose={handleClose} children={currentModal} />

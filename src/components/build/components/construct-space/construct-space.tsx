@@ -21,7 +21,9 @@ export const ConstructSpace: FC<Props> = ({ config, saveConfig }) => {
         saveConfig={saveConfig}
       />
       <WorkspaceTotal config={config} />
-      <div className={styles['next-button']}></div>
+      <div className={styles['next-container']}>
+        <button className={styles['next-button']}>Next</button>
+      </div>
     </div>
   );
 };

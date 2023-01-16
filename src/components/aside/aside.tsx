@@ -51,8 +51,8 @@ export const AsideBar: FC<Props> = () => {
           </li>
         </ul>
         <ul className={styles['control-list']}>
-          {controlImgLIist.map((img) => (
-            <li>
+          {controlImgLIist.map((img, index) => (
+            <li key={index}>
               <img src={img} />
             </li>
           ))}

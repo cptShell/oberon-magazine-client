@@ -93,11 +93,11 @@
 
 .parts-wrapper {
   display: flex;
-  width: 100%;
   flex-shrink: 0;
-  overflow-y: auto;
+  width: 100%;
+  height: calc(100vh - 285px);
   padding: 0 16px;
-  // box-shadow: 0px -22px 15px -10px rgba(34, 60, 80, 0.33) inset;
+  overflow-y: auto;
 }
 
 .parts-container {

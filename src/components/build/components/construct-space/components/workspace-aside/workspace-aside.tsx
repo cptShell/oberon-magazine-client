@@ -6,6 +6,7 @@ import arrowRight from '~/assets/img/icon/arrow-right.svg';
 import infoImg from '~/assets/img/icon/info.svg';
 import styles from './workspace-aside.module.scss';
 import clsx from 'clsx';
+import { Case } from '~/common/types/case';
 
 type Props = {
   config: PCConfig | null;
@@ -18,12 +19,12 @@ export const WorkspaceAside: FC<Props> = ({
   currentSection,
   saveConfig,
 }) => {
-  const handleColorChange = (index: number) => {
+  const handleCaseChange = (colorIndex: number, PCCase: Case) => {
     if (config) {
-      const updatedConfig = { ...config, currentColorIndex: index };
-      console.log(1);
+      const updatedConfig = { ...config, currentColorIndex: colorIndex };
+      if (PCCase !== config.case) updatedConfig.case = PCCase;
+
       saveConfig(updatedConfig);
-      console.log(2);
     }
   };
 
@@ -60,12 +61,22 @@ export const WorkspaceAside: FC<Props> = ({
           </div>
           <div className={styles['parts-wrapper']}>
             <ul className={styles['parts-container']}>
-              {PCCases.map(({ title, colors, type }, index) => {
+              {PCCases.map((PCCase) => {
+                const { title, colors, type } = PCCase;
+                const isCurrentCase = PCCase === config.case;
+                const currentColor =
+                  PCCase.colors[isCurrentCase ? config.currentColorIndex : 0];
+
                 return (
-                  <li key={title} className={styles['part-item']}>
+                  <li
+                    key={title}
+                    className={clsx(styles['part-item'], {
+                      [styles['active']]: isCurrentCase,
+                    })}
+                  >
                     <div className={styles['part-heading']}>
                       <div className={styles['heading-img']}>
-                        <img src={colors[config.currentColorIndex].imgSrc} />
+                        <img src={currentColor.imgSrc} />
                       </div>
                       <div className={styles['part-title']}>
                         <h4>{title}</h4>
@@ -74,15 +85,15 @@ export const WorkspaceAside: FC<Props> = ({
                     </div>
                     <div className={styles['part-color']}>
                       <span>Color:</span>
-                      <span>{colors[config.currentColorIndex].title}</span>
+                      <span>{currentColor.title}</span>
                     </div>
                     <ul className={styles['color-list']}>
                       {colors.map(({ hex, title }, index) => {
                         const isChoosedColor =
-                          config.currentColorIndex === index;
+                          config.currentColorIndex === index && isCurrentCase;
                         return (
                           <li
-                            onClick={() => handleColorChange(index)}
+                            onClick={() => handleCaseChange(index, PCCase)}
                             key={title}
                             className={clsx(styles['color-item'], {
                               [styles['active']]: isChoosedColor,
@@ -96,8 +107,11 @@ export const WorkspaceAside: FC<Props> = ({
                     </ul>
                     <div className={styles['control-container']}>
                       <button>info</button>
-                      <button className={clsx({ [styles['active']]: true })}>
-                        added
+                      <button
+                        onClick={() => handleCaseChange(0, PCCase)}
+                        className={clsx({ [styles['active']]: isCurrentCase })}
+                      >
+                        {isCurrentCase ? 'added' : 'add'}
                       </button>
                     </div>
                   </li>

@@ -426,12 +426,15 @@
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, 224px);
   width: 672px;
   & > a {
     display: flex;
     justify-content: center;
     align-items: center;
+    &:first-child {
+      padding-right: 30px;
+    }
   }
 }
 

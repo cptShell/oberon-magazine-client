@@ -5,7 +5,7 @@ import { Main } from '~/components/main/main';
 import { BuildACustomPC } from '../build-a-custom-pc/build-a-custom-pc';
 import { Build } from '../build/build';
 import { Community } from '../community/community';
-import { Support } from '../support/support';
+
 import styles from './App.module.scss';
 
 export const App: FC<{}> = () => {
@@ -18,7 +18,6 @@ export const App: FC<{}> = () => {
         <Route path="/build" element={<Build />} />
         <Route path="/community" element={<Community />} />
       </Routes>
-      <Support />
     </div>
   );
 };
